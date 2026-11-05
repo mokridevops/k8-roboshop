@@ -41,16 +41,15 @@ spec:
         image: joindevops/catalogue:4.0.0
         envFrom:
         - configMapRef:
-          name: catalogue
-        ports:
-        - containerPort: 80
+           name: catalogue
+        
 ---
 # second half is service.yaml file (default clusterIP)
 apiVersion: v1
 kind: Service
 metadata:
-   namespace: roboshop
    name: catalogue
+   namespace: roboshop
    # service labels
    labels:
       project: roboshop
